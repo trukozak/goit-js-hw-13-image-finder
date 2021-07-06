@@ -12,6 +12,20 @@
     />
   </head>
   <body>
+    <form class="search-form" id="search-form">
+      <input
+        class="search-form__input"
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+    </form>
+    
+    <div class="container">
+      <ul class="gallery list"></ul>
+      <button class="load-more-btn is-hidden" type="button">load more</button>
+    </div>
 
     <script src="./js/index.js"></script>
   </body>
