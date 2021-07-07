@@ -45,15 +45,9 @@ function onInputSearch(e) {
 }
 
 function renderPictureCard(hits) {
-  if (hits.length === 0) {
-    error({
-      text: 'Invalid query',
-      delay: 2000,
-    });
-    return;
-  }
-
+  loadMoreBtn.classList.remove('is-hidden');
   onMarkup(hits);
+  if (hits.length < 12) loadMoreBtn.classList.add('is-hidden');
 
   setTimeout(() => {
     window.scrollTo({
@@ -69,7 +63,6 @@ function clearPictureCard() {
 
 function onMarkup(elem) {
   pictureCardRef.insertAdjacentHTML('beforeend', pictureCardTpl(elem));
-  loadMoreBtn.classList.remove('is-hidden');
 }
 
 function onLoadMoreClick(e) {
